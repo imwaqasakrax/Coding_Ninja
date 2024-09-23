@@ -24,3 +24,12 @@ class Solution:
             elif arr[i] > second and arr[i] != largest:
                 second = arr[i]
         return second if second != float('-inf') else None
+-----------------------------------------------------------------------------------------------------
+class Solution:
+    def getSecondLargest(self, arr):
+        arr = list(set(arr))
+        arr.sort(reverse=True)
+        if len(arr) < 2:
+            return -1
+        return arr[1]
+
