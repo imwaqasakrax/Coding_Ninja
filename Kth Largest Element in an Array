@@ -12,3 +12,25 @@ class Solution(object):
     def findKthLargest(self, nums, k):
         nums.sort(reverse=True)
         return nums[k-1]
+-------------------------------------------------------------------------------------------------------------------------------------------
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        n = len(nums)
+        low, high = min(nums), max(nums)
+
+        while low <= high:
+            mid = low + (high - low) // 2
+            count = 0
+
+            for num in nums:
+                if num >= mid:
+                    count += 1
+
+            if count >= k:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return high
+
+     
