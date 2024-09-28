@@ -22,3 +22,19 @@ class Solution:
         
         arr[:] = positives + negatives
         return arr
+-----------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def segregateElements(self, arr):
+        l = 0  
+        h = len(arr) - 1  
+        while l <= h:
+            if arr[l] >= 0:
+                l += 1
+            elif arr[h] < 0:
+                h -= 1
+            else:
+                arr[l], arr[h] = arr[h], arr[l]
+                l += 1
+                h -= 1
+        
+        return arr
