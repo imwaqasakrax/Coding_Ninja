@@ -18,3 +18,15 @@ class Solution:
     #Function to return the count of number of elements in union of two arrays.
     def doUnion(self,arr1,arr2):
         return len(set(arr1+arr2))
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def doUnion(self, arr1, arr2):
+        result1 = set()
+        result2 = set()
+        for i in range(len(arr1)):
+            result1.add(arr1[i])
+        for j in range(len(arr2)):
+            result2.add(arr2[j])
+        sum0 = len(result1.union(result2))
+        
+        return sum0
