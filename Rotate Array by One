@@ -16,4 +16,13 @@ class Solution:
         for i in range(n):
             temp[(i + 1) % n] = arr[i]
         for i in range(n):
-            arr[i] = temp[i]
+            arr[i] = temp[I]
+-----------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def rotate(self, arr):
+        n = len(arr)
+        last = arr[n - 1]  
+        for i in range(n - 1, 0, -1):
+            arr[i] = arr[i - 1]  
+
+        arr[0] = last 
