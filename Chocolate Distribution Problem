@@ -30,3 +30,47 @@ class Solution:
                 min1 = d
         
         return min1
+--------------------------------------------------------------------------------------------------------------
+class Solution:
+    def canDistribute(self, arr, n, m, maxChocolates):
+        # Checks if it's possible to distribute with the given maxChocolates constraint
+        students = 1
+        currentSum = 0
+        
+        for i in range(n):
+            if arr[i] > maxChocolates:
+                return False
+            
+            if currentSum + arr[i] > maxChocolates:
+                students += 1
+                currentSum = arr[i]
+                
+                if students > m:
+                    return False
+            else:
+                currentSum += arr[i]
+                
+        return True
+
+    def chocolateDistribution(self, arr, n, m):
+        if m > n:
+            return -1
+        
+        low = max(arr)  # Minimum chocolates in a single packet
+        high = sum(arr)  # Maximum total chocolates
+        
+        result = high
+        
+        while low <= high:
+            mid = (low + high) // 2
+            
+            if self.canDistribute(arr, n, m, mid):
+                result = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+                
+        return result
+
+
+
