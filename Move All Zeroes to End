@@ -24,3 +24,15 @@ class Solution:
      
         arr[:] = non_zero + zero1
         return arr
+----------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def pushZerosToEnd(self, arr):
+        non_zero = 0
+        n = len(arr)
+        for i in range(n) :
+            if arr[i] != 0:
+                arr[non_zero],arr[i]=arr[i],arr[non_zero]
+                non_zero += 1
+                
+        return arr
+        
