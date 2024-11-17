@@ -32,4 +32,13 @@ class Solution:
         if len(arr) < 2:
             return -1
         return arr[1]
+-----------------------------------------------------------------------------------------------------------------
+#User function Template for python3
+class Solution:
+    def getSecondLargest(self, arr):
+        unique_sorted = sorted(set(arr), reverse=True)
+        if len(unique_sorted) < 2:
+            return -1  
+        else:
+            return unique_sorted[1]  
 
