@@ -26,3 +26,11 @@ class Solution:
             arr[i] = arr[i - 1]  
 
         arr[0] = last 
+------------------------------------------------------------------------------------------------------------------------------
+#User function Template for python3
+class Solution:
+    def rotate(self, arr):
+       last_ele = arr.pop()
+       arr.insert(0,last_ele)
+       return arr
+
