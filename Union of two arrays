@@ -30,3 +30,8 @@ class Solution:
         sum0 = len(result1.union(result2))
         
         return sum0
+-------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def findUnion(self, a, b):
+        union_set = set(a).union(set(b))
+        return len(union_set)
