@@ -22,3 +22,16 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
         return slow
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def middleNode(self, head):
+        count = 0
+        temp = head
+        while temp:
+            count += 1
+            temp = temp.next
+        middle_index = count // 2
+        temp = head
+        for _ in range(middle_index):
+            temp = temp.next
+        return temp
