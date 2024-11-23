@@ -28,4 +28,21 @@ class Solution:
         r = arr[k-1]
         for ele in r :
             return ele
+--------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def kthSmallest(self, arr, k):
+        low, high = min(arr), max(arr)
         
+        def countLessEqual(mid):
+            count = 0
+            for num in arr:
+                if num <= mid:
+                    count += 1
+            return count
+        while low < high:
+            mid = (low + high) // 2
+            if countLessEqual(mid) < k:
+                low = mid + 1  
+            else:
+                high = mid 
+        return low
