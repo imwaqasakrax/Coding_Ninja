@@ -1,0 +1,35 @@
+Given a Binary Search Tree. Your task is to complete the function which will return the kth largest element without doing any modification in the Binary Search Tree.
+Examples:
+Input:
+      4
+    /   \
+   2     9
+k = 2 
+Output: 4
+Input:
+       9
+        \ 
+          10
+k = 1
+Output: 10
+Input:
+      4
+    /   \
+   2     9
+k = 3 
+Output: 2
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def kthLargest(self,root, k):
+        values = []
+        def traverse(root):
+            if root is None:
+                return None
+            if root.right:
+                traverse(root.right)
+            values.append(root.data)
+            if root.left:
+                traverse(root.left)
+        traverse(root)
+        return values[k-1]
+    
