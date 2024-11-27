@@ -25,3 +25,11 @@ class Solution:
         reverse(0, n - 1)
         
         return arr
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution:
+    def rotateArr(self, arr, d):
+        n = len(arr)
+        d %= n
+        rotated_arr = arr[d:] + arr[:d]
+        arr[:] = rotated_arr
+        return arr
