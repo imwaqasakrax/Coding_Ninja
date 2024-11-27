@@ -33,4 +33,12 @@ class Solution:
        last_ele = arr.pop()
        arr.insert(0,last_ele)
        return arr
+-------------------------------------------------------------------------------------------------------------------------------------------------=====================
+#User function Template for python3
+class Solution:
+    def rotate(self, arr):
+        l=arr[-1]
+        arr[1:]=arr[:-1]
+        arr[0]=l
+
 
