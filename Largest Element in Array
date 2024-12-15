@@ -20,3 +20,11 @@ class Solution:
                 max_num = num
                 
         return max_num
+------------------------------------------------------------------------------------------------------------------------------------------------
+from typing import List
+
+class Solution:
+    def largest(self, arr: List[int]) -> int:
+       arr.sort(reverse=True)
+       return arr[0]
+
