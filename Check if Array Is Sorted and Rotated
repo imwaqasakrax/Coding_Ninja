@@ -24,5 +24,13 @@ class Solution(object):
         if nums[-1] > nums[0]:
             count += 1
         return count <= 1
+---------------------------------------------------------------------------------------------------------------------------------------
+class Solution(object):
+    def check(self, nums):
+        sorted_nums=sorted(nums)
+        for k in range(len(nums)):
+            if nums[k:]+nums[:k] == sorted_nums:
+                return True
+        return False
 
  
